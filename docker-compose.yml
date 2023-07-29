@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+###> doctrine/doctrine-bundle ###
+  database:
+    image: postgres:15.3-alpine
+    container_name: db_pg_ctas
+    restart: always
+    environment:
+      POSTGRES_DB: ctas_db
+      # You should definitely change the password in production
+      POSTGRES_PASSWORD: 5432
+      POSTGRES_USER: postgres
+    volumes:
+      - database_data:/var/lib/postgresql
+    networks:
+      - dev
+  www:
+      build: docker
+      container_name: www_ctas
+      restart: always
+      ports:
+        - 8000:80
+      volumes:
+        - ./docker/vhosts:/etc/apache2/sites-enabled
+        - ./:var/www
+      networks:
+        - dev
+
+
+networks:
+  dev:
+
+volumes:
+  database_data:
