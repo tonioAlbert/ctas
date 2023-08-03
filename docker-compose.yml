@@ -1,37 +1,98 @@
-version: '3'
+version: '3.7'
 
 services:
 ###> doctrine/doctrine-bundle ###
-  database:
+  database-pgsql:
     image: postgres:15.3-alpine
+#    image: postgres:11-alpine
     container_name: db_pg_ctas
-    restart: always
+    restart: on-failure
     ports:
-      - "5532:5432"
+      - "4040:5432"
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
     environment:
-      POSTGRES_DB: ctas_db
-      # You should definitely change the password in production
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_USER: postgres
+      POSTGRES_DB: ctas
+      POSTGRES_USER: admin_ctas
+      POSTGRES_PASSWORD: admin_ctas
     volumes:
       - database_data:/var/lib/postgresql
-    networks:
-      - dev
+#    networks:
+#      - dev
+
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4_ctas
+    depends_on:
+      - database-pgsql
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=ga.randrianarivelo@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=pgadminctas
+    ports:
+      - "5050:80"
+
+
+
+#  database-mysql:
+#    image: mysql
+#    container_name: db_mysql_ctas
+#    restart: on-failure
+#    ports:
+#      - "3031:3306"
+#    volumes:
+#      - database_data:/var/lib/mysql
+#    environment:
+#      MYSQL_ROOT_PASSWORD: mysql__cats_root
+#      MYSQL_DATABASE: ctas
+#      MYSQL_USER: mysql__ctas
+#      MYSQL_PASSWORD: mysql__ctas
+#    networks:
+#      - dev
+
+
+
+#  phpmyadmin:
+#    image: phpmyadmin
+#    container_name: phpmyadmin_ctas
+#    restart: on-failure
+#    depends_on:
+#      - database-mysql
+#    ports:
+#      - "6060:80"
+#    environment:
+#      PMA_HOST: database-mysql
+#    networks:
+#      - dev
+
+
+
+  adminer:
+    image: adminer
+    container_name: adminer_ctas
+    restart: on-failure
+    ports:
+      - "7070:8080"
+
+
+
   www:
       build: docker
       container_name: www_ctas
-      restart: always
+      restart: on-failure
       ports:
         - "8080:80"
       volumes:
         - ./docker/vhosts:/etc/apache2/sites-enabled
         - ./:/var/www
-      networks:
-        - dev
-
-
-networks:
-  dev:
+#      networks:
+#        - dev
+#
+#
+#networks:
+#  dev:
 
 volumes:
   database_data:
