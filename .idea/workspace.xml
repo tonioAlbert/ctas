@@ -4,11 +4,60 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c643331-8935-4db5-bf46-a01e3029cdb1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer-setup.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.override.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+    <list default="true" id="882ad843-6119-48e2-b427-5360d6265d71" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/.env.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/assets/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/assets/styles/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/bin/console" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/bin/phpunit" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/composer.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/bundles.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/cache.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/debug.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/doctrine.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/doctrine_migrations.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/framework.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/lexik_jwt_authentication.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/mailer.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/messenger.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/monolog.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/notifier.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/routing.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/security.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/translation.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/twig.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/uid.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/validator.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/web_profiler.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/webpack_encore.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/preload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/routes.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/routes/api_platform.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/routes/framework.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/routes/web_profiler.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/services.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/docker-compose.override.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/migrations/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phpunit.xml.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/public/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/ApiResource/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/Controller/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/Entity/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/Kernel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/Repository/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/symfony.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/templates/base.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/tests/bootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/translations/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
