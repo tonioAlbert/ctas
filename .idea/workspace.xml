@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="882ad843-6119-48e2-b427-5360d6265d71" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Controller/EncController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/pages/enc/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.env" beforeDir="false" afterPath="$PROJECT_DIR$/project/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/HomeController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
