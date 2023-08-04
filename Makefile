@@ -1,8 +1,8 @@
-# Colors
+# Colorations des messages
 GREEN = /bin/echo -e "\x1b[32m\#\# $1\x1b[0m"
 RED = /bin/echo -e "\x1b[31m\#\# $1\x1b[0m"
 
-# Variables
+# Variables globales
 D = docker
 DC = docker-compose
 EXEC = $(D) exec -w /var/www/project www_ctas
@@ -12,17 +12,17 @@ NPM = $(EXEC) npm
 SFC = $(PHP) bin/console
 
 
-## —— 🔥 App ——
+## —— 🔥 Inisialization of application ——
 init: ## Init the project
 	$(MAKE) start
 	$(MAKE) composer-install
 	$(MAKE) npm-install
-	@$(call GREEN,"The application is available at: http://127.0.0.1:8080/.")
+#	@$(call GREEN,"The application is available at: http://127.0.0.1:8080/.")
 
 cache-clear: ## Clear cache - symfony
 	$(SFC) cache:clear
 
-## —— ✅ Test ——
+## —— ✅ Tests ——
 .PHONY: tests
 tests: ## Run all tests
 	$(MAKE) database-init-test
@@ -59,7 +59,7 @@ stop: ## Stop app
 	$(MAKE) docker-stop
 docker-stop:
 	$(DC) stop
-	@$(call RED,"The containers are now stopped.")
+#	@$(call RED,"The containers are now stopped.")
 
 ## —— 🎻 Composer ——
 composer-install: ## Install dependencies

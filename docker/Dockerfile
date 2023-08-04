@@ -6,7 +6,7 @@ RUN apt-get update \
     && apt-get install -qq -y --no-install-recommends \
     cron \
      vim \
-     locales coreutils apt-utils git libicu-dev g++ libpng-dev libxml2-dev libzip-dev libonig-dev libxslt-dev unzip zip make;
+     locales coreutils apt-utils git libicu-dev g++ libpng-dev libxml2-dev libzip-dev libonig-dev libxslt-dev unzip zip make nodejs npm;
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
     echo "fr_FR.UTF-8 UTF-8" >> /etc/locale.gen && \
@@ -26,6 +26,13 @@ RUN apt-get install -y libpq-dev \
 # Instalaltion cli symfony in OS
 RUN  curl -sS https://get.symfony.com/cli/installer | bash && \
      mv /root/.symfony5/bin/symfony /usr/local/bin
+
+## Instalaltion de NodeJS in os
+#RUN curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+#    && apt-get apt install nodejs
+
+
+
 
 RUN apt-get install -y apt-transport-https
 
