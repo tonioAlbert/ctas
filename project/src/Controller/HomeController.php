@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-Class EncController extends AbstractController
+Class HomeController extends AbstractController
 {
 
 
@@ -16,7 +16,7 @@ Class EncController extends AbstractController
     #[Route('/', name: 'app.home')]
     public function index() : Response
     {
-        return $this->render("pages/enc/index.html.twig");
+        return $this->render("index.html.twig");
     }
 
 
