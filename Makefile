@@ -103,6 +103,7 @@ migration: ## Alias : database-migration
 database-migrate: ## Migrate migrations
 	$(SFC) d:m:m --no-interaction
 
+
 migrate: ## Alias : database-migrate
 	$(MAKE) database-migrate
 
