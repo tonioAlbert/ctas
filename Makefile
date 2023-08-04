@@ -17,7 +17,7 @@ init: ## Init the project
 	$(MAKE) start
 	$(MAKE) composer-install
 	$(MAKE) npm-install
-#	@$(call GREEN,"The application is available at: http://127.0.0.1:8080/.")
+	@$(call GREEN,"The application is available at: http://127.0.0.1:8080/.")
 
 cache-clear: ## Clear cache - symfony
 	$(SFC) cache:clear
@@ -59,7 +59,7 @@ stop: ## Stop app
 	$(MAKE) docker-stop
 docker-stop:
 	$(DC) stop
-#	@$(call RED,"The containers are now stopped.")
+	@$(call RED,"The containers are now stopped.")
 
 ## —— 🎻 Composer ——
 composer-install: ## Install dependencies
@@ -115,5 +115,10 @@ fixtures: ## Alias : database-fixtures-load
 ## —— 🛠️  Others ——
 help: ## List of commands
 	@grep -E '(^[a-zA-Z0-9_-]+:.*?##.*$$)|(^##)' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}{printf "\033[32m%-30s\033[0m %s\n", $$1, $$2}' | sed -e 's/\[32m##/[33m/'
+
+
+
+install-yarn:
+	$(NPM) install -g yarn
 
 
