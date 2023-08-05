@@ -6,7 +6,7 @@ RUN apt-get update \
     && apt-get install -qq -y --no-install-recommends \
     cron \
      vim \
-     locales coreutils apt-utils git libicu-dev g++ libpng-dev libxml2-dev libzip-dev libonig-dev libxslt-dev unzip zip make nodejs npm;
+     locales coreutils apt-utils git libicu-dev g++ libpng-dev libxml2-dev libzip-dev libonig-dev libxslt-dev unzip zip make yarn nodejs npm net-tools iputils-ping nano iproute2 python3 python3-pip;
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
     echo "fr_FR.UTF-8 UTF-8" >> /etc/locale.gen && \

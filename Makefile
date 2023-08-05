@@ -24,7 +24,7 @@ init: ## Init the project
 
 ## —— ✅ Docker CMD ——
 cctas: ## Symfony CMD php bin/console
-	$(RUN_DOCKER_CONTAINER)
+	$(EXEC)
 
 ## —— ✅ Tests ——
 .PHONY: tests
