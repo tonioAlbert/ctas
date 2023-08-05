@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="882ad843-6119-48e2-b427-5360d6265d71" name="Changes" comment="" />
+=======
+    <list default="true" id="882ad843-6119-48e2-b427-5360d6265d71" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/project/.env" beforeDir="false" afterPath="$PROJECT_DIR$/project/.env" afterDir="false" />
+    </list>
+>>>>>>> dev
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,7 +124,6 @@
       <path value="$PROJECT_DIR$/project/vendor/symfony/monolog-bridge" />
       <path value="$PROJECT_DIR$/project/vendor/symfony/asset" />
       <path value="$PROJECT_DIR$/project/vendor/symfony/translation-contracts" />
-      <path value="$PROJECT_DIR$/project/vendor/namshi/jose" />
       <path value="$PROJECT_DIR$/project/vendor/symfony/stopwatch" />
       <path value="$PROJECT_DIR$/project/vendor/willdurand/negotiation" />
       <path value="$PROJECT_DIR$/project/vendor/phpdocumentor/reflection-common" />
@@ -146,12 +151,9 @@
       <path value="$PROJECT_DIR$/project/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/project/vendor/fakerphp/faker" />
       <path value="$PROJECT_DIR$/project/vendor/symfony/webpack-encore-bundle" />
-      <path value="$PROJECT_DIR$/project/vendor/lcobucci/clock" />
-      <path value="$PROJECT_DIR$/project/vendor/lcobucci/jwt" />
       <path value="$PROJECT_DIR$/project/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/project/vendor/phpstan/phpdoc-parser" />
       <path value="$PROJECT_DIR$/project/vendor/api-platform/core" />
-      <path value="$PROJECT_DIR$/project/vendor/lexik/jwt-authentication-bundle" />
       <path value="$PROJECT_DIR$/project/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/project/vendor/composer" />
       <path value="$PROJECT_DIR$/project/vendor/symfony/flex" />
@@ -168,6 +170,11 @@
       <path value="$PROJECT_DIR$/project/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/project/vendor/symfony/uid" />
       <path value="$PROJECT_DIR$/project/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/project/vendor/lexik/jwt-authentication-bundle" />
+      <path value="$PROJECT_DIR$/project/vendor/stella-maris/clock" />
+      <path value="$PROJECT_DIR$/project/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/project/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/project/vendor/namshi/jose" />
     </include_path>
   </component>
   <component name="ProjectId" id="2TQAl5MTaeiws8Bwv7E9wwdE0HY" />
@@ -204,6 +211,7 @@
       <workItem from="1691127080116" duration="9175000" />
       <workItem from="1691140406715" duration="1347000" />
       <workItem from="1691147180868" duration="5644000" />
+      <workItem from="1691222584130" duration="1582000" />
     </task>
     <servers />
   </component>

@@ -104,7 +104,6 @@
       <path value="$PROJECT_DIR$/project/vendor/symfony/monolog-bridge" />
       <path value="$PROJECT_DIR$/project/vendor/symfony/asset" />
       <path value="$PROJECT_DIR$/project/vendor/symfony/translation-contracts" />
-      <path value="$PROJECT_DIR$/project/vendor/namshi/jose" />
       <path value="$PROJECT_DIR$/project/vendor/symfony/stopwatch" />
       <path value="$PROJECT_DIR$/project/vendor/willdurand/negotiation" />
       <path value="$PROJECT_DIR$/project/vendor/phpdocumentor/reflection-common" />
@@ -132,12 +131,9 @@
       <path value="$PROJECT_DIR$/project/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/project/vendor/fakerphp/faker" />
       <path value="$PROJECT_DIR$/project/vendor/symfony/webpack-encore-bundle" />
-      <path value="$PROJECT_DIR$/project/vendor/lcobucci/clock" />
-      <path value="$PROJECT_DIR$/project/vendor/lcobucci/jwt" />
       <path value="$PROJECT_DIR$/project/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/project/vendor/phpstan/phpdoc-parser" />
       <path value="$PROJECT_DIR$/project/vendor/api-platform/core" />
-      <path value="$PROJECT_DIR$/project/vendor/lexik/jwt-authentication-bundle" />
       <path value="$PROJECT_DIR$/project/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/project/vendor/composer" />
       <path value="$PROJECT_DIR$/project/vendor/symfony/flex" />
@@ -154,6 +150,11 @@
       <path value="$PROJECT_DIR$/project/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/project/vendor/symfony/uid" />
       <path value="$PROJECT_DIR$/project/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/project/vendor/lexik/jwt-authentication-bundle" />
+      <path value="$PROJECT_DIR$/project/vendor/stella-maris/clock" />
+      <path value="$PROJECT_DIR$/project/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/project/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/project/vendor/namshi/jose" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1">

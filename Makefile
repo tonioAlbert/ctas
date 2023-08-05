@@ -3,9 +3,11 @@ GREEN = /bin/echo -e "\x1b[32m\#\# $1\x1b[0m"
 RED = /bin/echo -e "\x1b[31m\#\# $1\x1b[0m"
 
 # Variables globales
+CONTAINER_PROJECT = www_ctas
 D = docker
 DC = docker-compose
-EXEC = $(D) exec -w /var/www/project www_ctas
+RUN_DOCKER_CONTAINER = $(D) exec  -it  $(CONTAINER_PROJECT) bash
+EXEC = $(D) exec -w /var/www/project $(CONTAINER_PROJECT)
 PHP = $(EXEC) php
 C = $(EXEC) composer
 NPM = $(EXEC) npm
@@ -19,8 +21,10 @@ init: ## Init the project
 	$(MAKE) npm-install
 	@$(call GREEN,"The application is available at: http://127.0.0.1:8080/.")
 
-cache-clear: ## Clear cache - symfony
-	$(SFC) cache:clear
+
+## —— ✅ Docker CMD ——
+cctas: ## Symfony CMD php bin/console
+	$(RUN_DOCKER_CONTAINER)
 
 ## —— ✅ Tests ——
 .PHONY: tests
@@ -30,11 +34,11 @@ tests: ## Run all tests
 	$(PHP) bin/phpunit --testdox tests/Functional/
 	$(PHP) bin/phpunit --testdox tests/E2E/
 
-database-init-test: ## Init database for test
+db-init-test: ## Init database for test
 	$(SFC) d:d:d --force --if-exists --env=test
 	$(SFC) d:d:c --env=test
-	$(SFC) d:m:m --no-interaction --env=test
-	$(SFC) d:f:l --no-interaction --env=test
+#	$(SFC) d:m:m --no-interaction --env=test
+#	$(SFC) d:f:l --no-interaction --env=test
 
 unit-test: ## Run unit tests
 	$(MAKE) database-init-test
