@@ -1,10 +1,8 @@
 version: '3.7'
 
 services:
-###> doctrine/doctrine-bundle ###
   database-pgsql:
     image: postgres:15.3-alpine
-#    image: postgres:11-alpine
     container_name: db_pg_ctas
     restart: on-failure
     ports:
@@ -19,8 +17,9 @@ services:
       POSTGRES_PASSWORD: admin_ctas
     volumes:
       - database_data:/var/lib/postgresql
-#    networks:
-#      - dev
+    networks:
+      ctas-mg:
+        ipv4_address: 192.168.20.3
 
 
   pgadmin:
@@ -33,39 +32,10 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=pgadminctas
     ports:
       - "5050:80"
+    networks:
+      ctas-mg:
+        ipv4_address: 192.168.20.4
 
-
-
-#  database-mysql:
-#    image: mysql
-#    container_name: db_mysql_ctas
-#    restart: on-failure
-#    ports:
-#      - "3031:3306"
-#    volumes:
-#      - database_data:/var/lib/mysql
-#    environment:
-#      MYSQL_ROOT_PASSWORD: mysql__cats_root
-#      MYSQL_DATABASE: ctas
-#      MYSQL_USER: mysql__ctas
-#      MYSQL_PASSWORD: mysql__ctas
-#    networks:
-#      - dev
-
-
-
-#  phpmyadmin:
-#    image: phpmyadmin
-#    container_name: phpmyadmin_ctas
-#    restart: on-failure
-#    depends_on:
-#      - database-mysql
-#    ports:
-#      - "6060:80"
-#    environment:
-#      PMA_HOST: database-mysql
-#    networks:
-#      - dev
 
 
 
@@ -75,7 +45,9 @@ services:
     restart: on-failure
     ports:
       - "7070:8080"
-
+    networks:
+      ctas-mg:
+        ipv4_address: 192.168.20.5
 
 
   www:
@@ -87,12 +59,19 @@ services:
       volumes:
         - ./docker/vhosts:/etc/apache2/sites-enabled
         - ./:/var/www
-#      networks:
-#        - dev
-#
-#
-#networks:
-#  dev:
+      networks:
+        ctas-mg:
+          ipv4_address: 192.168.20.2
+
+
+networks:
+  ctas-mg:
+    name: ctas-mg
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.20.0/24
+          gateway: 192.168.20.1
 
 volumes:
   database_data:
