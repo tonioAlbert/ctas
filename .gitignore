@@ -3,33 +3,40 @@
 /.env.local
 /.env.local.php
 /.env.*.local
-/config/secrets/prod/prod.decrypt.private.php
-/public/bundles/
-/var/
-/vendor/
+/project/config/secrets/prod/prod.decrypt.private.php
+/project/public/bundles/
+/project/var/
+/project/vendor/
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###
-/phpunit.xml
-.phpunit.result.cache
+/project/phpunit.xml
+/project/.phpunit.result.cache
 ###< phpunit/phpunit ###
 
 ###> symfony/phpunit-bridge ###
-.phpunit.result.cache
-/phpunit.xml
+/project/.phpunit.result.cache
+/project/phpunit.xml
 ###< symfony/phpunit-bridge ###
 
 ###> symfony/webpack-encore-bundle ###
-/node_modules/
-/public/build/
-npm-debug.log
-yarn-error.log
+/project/node_modules/
+/project/public/build/
+/project/npm-debug.log
+/project/yarn-error.log
 ###< symfony/webpack-encore-bundle ###
 
 ###> lexik/jwt-authentication-bundle ###
-/config/jwt/*.pem
+/project/config/jwt/*.pem
 ###< lexik/jwt-authentication-bundle ###
 
 ###> versionning GIT ###
-/.idea/
+.idea/
+.gitignore
+/project/.gitignore
 ### versionning GIT ###
+
+###> versionning DOCKER ###
+.dockerignore
+### versionning DOCKER ###
+

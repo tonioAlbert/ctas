@@ -33,3 +33,7 @@ yarn-error.log
 ###> versionning GIT ###
 /.idea/
 ### versionning GIT ###
+
+###> versionning DOCKER ###
+/.dockerignore/
+### versionning DOCKER ###
