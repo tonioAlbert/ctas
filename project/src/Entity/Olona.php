@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\OlonaRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -30,6 +32,17 @@ class Olona
 
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
+
+    #[ORM\ManyToOne(inversedBy: 'olonas')]
+    private ?Sary $sary = null;
+
+    #[ORM\OneToMany(mappedBy: 'olona', targetEntity: Mipetraka::class)]
+    private Collection $mipetrakas;
+
+    public function __construct()
+    {
+        $this->mipetrakas = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -92,6 +105,48 @@ class Olona
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getSary(): ?Sary
+    {
+        return $this->sary;
+    }
+
+    public function setSary(?Sary $sary): static
+    {
+        $this->sary = $sary;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Mipetraka>
+     */
+    public function getMipetrakas(): Collection
+    {
+        return $this->mipetrakas;
+    }
+
+    public function addMipetraka(Mipetraka $mipetraka): static
+    {
+        if (!$this->mipetrakas->contains($mipetraka)) {
+            $this->mipetrakas->add($mipetraka);
+            $mipetraka->setOlona($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMipetraka(Mipetraka $mipetraka): static
+    {
+        if ($this->mipetrakas->removeElement($mipetraka)) {
+            // set the owning side to null (unless already changed)
+            if ($mipetraka->getOlona() === $this) {
+                $mipetraka->setOlona(null);
+            }
+        }
 
         return $this;
     }

@@ -31,6 +31,12 @@ class Mipetraka
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    #[ORM\ManyToOne(inversedBy: 'mipetrakas')]
+    private ?Fokontany $fokontany = null;
+
+    #[ORM\ManyToOne(inversedBy: 'mipetrakas')]
+    private ?Olona $olona = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -92,6 +98,30 @@ class Mipetraka
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getFokontany(): ?Fokontany
+    {
+        return $this->fokontany;
+    }
+
+    public function setFokontany(?Fokontany $fokontany): static
+    {
+        $this->fokontany = $fokontany;
+
+        return $this;
+    }
+
+    public function getOlona(): ?Olona
+    {
+        return $this->olona;
+    }
+
+    public function setOlona(?Olona $olona): static
+    {
+        $this->olona = $olona;
 
         return $this;
     }

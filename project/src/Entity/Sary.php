@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\SaryRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: SaryRepository::class)]
@@ -32,6 +34,14 @@ class Sary
 
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
+
+    #[ORM\OneToMany(mappedBy: 'sary', targetEntity: Olona::class)]
+    private Collection $olonas;
+
+    public function __construct()
+    {
+        $this->olonas = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -106,6 +116,36 @@ class Sary
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Olona>
+     */
+    public function getOlonas(): Collection
+    {
+        return $this->olonas;
+    }
+
+    public function addOlona(Olona $olona): static
+    {
+        if (!$this->olonas->contains($olona)) {
+            $this->olonas->add($olona);
+            $olona->setSary($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOlona(Olona $olona): static
+    {
+        if ($this->olonas->removeElement($olona)) {
+            // set the owning side to null (unless already changed)
+            if ($olona->getSary() === $this) {
+                $olona->setSary(null);
+            }
+        }
 
         return $this;
     }

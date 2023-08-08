@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\CommuneRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CommuneRepository::class)]
@@ -23,6 +25,14 @@ class Commune
 
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
+
+    #[ORM\OneToMany(mappedBy: 'commune', targetEntity: Fokontany::class)]
+    private Collection $fokontanys;
+
+    public function __construct()
+    {
+        $this->fokontanys = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -61,6 +71,36 @@ class Commune
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Fokontany>
+     */
+    public function getFokontanys(): Collection
+    {
+        return $this->fokontanys;
+    }
+
+    public function addFokontany(Fokontany $fokontany): static
+    {
+        if (!$this->fokontanys->contains($fokontany)) {
+            $this->fokontanys->add($fokontany);
+            $fokontany->setCommune($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFokontany(Fokontany $fokontany): static
+    {
+        if ($this->fokontanys->removeElement($fokontany)) {
+            // set the owning side to null (unless already changed)
+            if ($fokontany->getCommune() === $this) {
+                $fokontany->setCommune(null);
+            }
+        }
 
         return $this;
     }

@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\FokontanyRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: FokontanyRepository::class)]
@@ -23,6 +25,17 @@ class Fokontany
 
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
+
+    #[ORM\ManyToOne(inversedBy: 'fokontanys')]
+    private ?Commune $commune = null;
+
+    #[ORM\OneToMany(mappedBy: 'fokontany', targetEntity: Mipetraka::class)]
+    private Collection $mipetrakas;
+
+    public function __construct()
+    {
+        $this->mipetrakas = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -61,6 +74,48 @@ class Fokontany
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getCommune(): ?Commune
+    {
+        return $this->commune;
+    }
+
+    public function setCommune(?Commune $commune): static
+    {
+        $this->commune = $commune;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Mipetraka>
+     */
+    public function getMipetrakas(): Collection
+    {
+        return $this->mipetrakas;
+    }
+
+    public function addMipetraka(Mipetraka $mipetraka): static
+    {
+        if (!$this->mipetrakas->contains($mipetraka)) {
+            $this->mipetrakas->add($mipetraka);
+            $mipetraka->setFokontany($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMipetraka(Mipetraka $mipetraka): static
+    {
+        if ($this->mipetrakas->removeElement($mipetraka)) {
+            // set the owning side to null (unless already changed)
+            if ($mipetraka->getFokontany() === $this) {
+                $mipetraka->setFokontany(null);
+            }
+        }
 
         return $this;
     }
