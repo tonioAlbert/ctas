@@ -24,7 +24,7 @@ init: ## Init the project
 
 ## —— ✅ Docker CMD ——
 cctas: ## Symfony CMD php bin/console
-	$(EXEC)
+	$(RUN_DOCKER_CONTAINER)
 
 ## —— ✅ Tests ——
 .PHONY: tests
@@ -37,8 +37,8 @@ tests: ## Run all tests
 db-init-test: ## Init database for test
 	$(SFC) d:d:d --force --if-exists --env=test
 	$(SFC) d:d:c --env=test
-#	$(SFC) d:m:m --no-interaction --env=test
-#	$(SFC) d:f:l --no-interaction --env=test
+	$(SFC) d:m:m --no-interaction --env=test
+	$(SFC) d:f:l --no-interaction --env=test
 
 unit-test: ## Run unit tests
 	$(MAKE) database-init-test
