@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fokontany index{% endblock %}
+
+{% block body %}
+    <h1>Fokontany index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Commune</th>
+                <th>CreatedAt</th>
+                <th>UpdatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for fokontany in fokontanies %}
+            <tr>
+                <td>{{ fokontany.id }}</td>
+                <td>{{ fokontany.nom }}</td>
+                <td>{{ fokontany.commune.nom |upper }}</td>
+                <td>{{ fokontany.createdAt ? fokontany.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ fokontany.updatedAt ? fokontany.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_fokontany_show', {'id': fokontany.id}) }}">show</a>
+                    <a href="{{ path('app_fokontany_edit', {'id': fokontany.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_fokontany_new') }}">Create new</a>
+{% endblock %}

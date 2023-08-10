@@ -28,7 +28,7 @@ class Mipetraka
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
     #[ORM\ManyToOne(inversedBy: 'mipetrakas')]
@@ -36,6 +36,15 @@ class Mipetraka
 
     #[ORM\ManyToOne(inversedBy: 'mipetrakas')]
     private ?Olona $olona = null;
+
+
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable();
+    }
+
+
 
     public function getId(): ?int
     {

@@ -32,7 +32,7 @@ class Sary
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
     #[ORM\OneToMany(mappedBy: 'sary', targetEntity: Olona::class)]
@@ -41,6 +41,7 @@ class Sary
     public function __construct()
     {
         $this->olonas = new ArrayCollection();
+        $this->createdAt = new \DateTimeImmutable();
     }
 
     public function getId(): ?int
