@@ -1,5 +1,6 @@
 
-# APPS CTAS (Centre Technique Agro-écologique du Sud)  - (Gestion de project, congé, RRH, etc.)
+# APS CTAS (Centre Technique Agro-écologique du Sud)  - (Gestion de project, congé, RRH, etc.)
+
 
 
 ## Installation
@@ -35,11 +36,11 @@ Pour le premier lancement de docker-compose up -d , docker va télécharger les 
 
   Lien des services après installation:
 
-  PostgreSQL : [http://127.0.0.1:8080/](http://127.0.0.1:5050/)
+  PostgreSQL : [http://127.0.0.1:5050/](http://127.0.0.1:5050/)
 
-  PgAdmin4 : [http://127.0.0.1:8080/](http://127.0.0.1:4040/)
+  PgAdmin4 : [http://127.0.0.1:4040/](http://127.0.0.1:4040/)
 
-  Adminer : [http://127.0.0.1:8080/](http://127.0.0.1:7070/)
+  Adminer : [http://127.0.0.1:7070/](http://127.0.0.1:7070/)
 
 
 
